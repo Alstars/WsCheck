@@ -1,0 +1,9 @@
+okx:
+  ws:
+    public-url: wss://ws.okx.com:8443/ws/v5/public
+    private-url: wss://ws.okx.com:8443/ws/v5/private
+    business-url: wss://ws.okx.com:8443/ws/v5/business
+  api:
+    key: 1234
+    secret: 1234
+    passphrase: 1234
