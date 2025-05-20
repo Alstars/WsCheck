@@ -13,17 +13,17 @@ import java.util.Map;
 
 @Slf4j
 @Component
-public class OkxPrivateWebSocketClient extends WebSocketClient {
+public class PrivateWebSocketClient extends WebSocketClient {
 
     private final ObjectMapper objectMapper;
-    private final OkxConfig okxConfig;
+    private final Config config;
     private boolean isConnected = false;
 
     @Autowired
-    public OkxPrivateWebSocketClient(OkxConfig okxConfig) {
-        super(URI.create(okxConfig.getWs().getBusinessUrl()));
+    public PrivateWebSocketClient(Config config) {
+        super(URI.create(config.getWs().getBusinessUrl()));
         this.objectMapper = new ObjectMapper();
-        this.okxConfig = okxConfig;
+        this.config = config;
     }
 
     public void ensureConnected() {

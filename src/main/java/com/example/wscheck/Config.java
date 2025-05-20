@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "okx")
-public class OkxConfig {
+public class Config {
     private WsConfig ws;
     private ApiConfig api;
 

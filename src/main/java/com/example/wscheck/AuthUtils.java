@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
 import java.util.Base64;
 
-public class OkxAuthUtils {
+public class AuthUtils {
 
     public static String generateSignature(String secret, String timestamp, String method, String requestPath,
                                            String body) throws NoSuchAlgorithmException, InvalidKeyException {

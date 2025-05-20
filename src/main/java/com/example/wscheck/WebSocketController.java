@@ -8,27 +8,27 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/okx/ws")
 @RequiredArgsConstructor
-public class OkxWebSocketController {
+public class WebSocketController {
 
-    private final OkxWebSocketService okxWebSocketService;
-    private final OkxPrivateWebSocketClient okxPrivateWebSocketClient;
+    private final WebSocketService okxWebSocketService;
+    private final PrivateWebSocketClient privateWebSocketClient;
 
     @PostMapping("/connect")
     public String connectAll() {
-        okxPrivateWebSocketClient.ensureConnected();
+        privateWebSocketClient.ensureConnected();
         return "WebSocket connections initiated";
     }
 
     @PostMapping("/disconnect")
     public String disconnectAll() {
-        okxPrivateWebSocketClient.close();
+        privateWebSocketClient.close();
         return "WebSocket connections closed";
     }
 
     @GetMapping("/status")
     public Map<String, Boolean> getConnectionStatus() {
         return Map.of(
-                "privateConnection", okxPrivateWebSocketClient.isOpen()
+                "privateConnection", privateWebSocketClient.isOpen()
         );
     }
 

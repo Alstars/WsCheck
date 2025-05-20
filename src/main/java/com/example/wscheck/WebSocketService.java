@@ -11,20 +11,20 @@ import java.util.Map;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class OkxWebSocketService {
+public class WebSocketService {
 
-    private final OkxPrivateWebSocketClient okxPrivateWebSocketClient;
+    private final PrivateWebSocketClient privateWebSocketClient;
 
     @PostConstruct
     public void init() {
         log.info("Initializing WebSocket connections...");
-        okxPrivateWebSocketClient.ensureConnected();
+        privateWebSocketClient.ensureConnected();
     }
 
     public void subscribeToCandles(String instrumentId, String channel) {
         Map<String, Object> args = new HashMap<>();
         args.put("instId", instrumentId);
-        okxPrivateWebSocketClient.subscribeToCandles(instrumentId, channel);
+        privateWebSocketClient.subscribeToCandles(instrumentId, channel);
     }
 
 }
