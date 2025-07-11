@@ -1,5 +1,7 @@
-package com.example.wscheck;
+package com.example.wscheck.ws;
 
+//import com.example.wscheck.util.OkxCandleService;
+import com.example.wscheck.config.Config;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +9,7 @@ import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 
 import java.net.URI;
 import java.util.Map;
@@ -15,9 +18,11 @@ import java.util.Map;
 @Component
 public class PrivateWebSocketClient extends WebSocketClient {
 
+    private StandardWebSocketClient webSocketClient;
     private final ObjectMapper objectMapper;
     private final Config config;
     private boolean isConnected = false;
+//    private OkxCandleService okxCandleService;
 
     @Autowired
     public PrivateWebSocketClient(Config config) {
@@ -62,6 +67,9 @@ public class PrivateWebSocketClient extends WebSocketClient {
         try {
             Map<String, Object> messageMap = objectMapper.readValue(message, Map.class);
             log.info("Received private message: {}", messageMap);
+//            if (message.contains("channel")){
+//                OkxCandle candle = okxCandleService.parseCandleMessage(message);
+//            }
         } catch (JsonProcessingException e) {
             log.error("Error parsing private WebSocket message", e);
         }

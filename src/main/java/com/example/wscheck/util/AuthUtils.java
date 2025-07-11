@@ -1,4 +1,4 @@
-package com.example.wscheck;
+package com.example.wscheck.util;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

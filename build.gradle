@@ -18,15 +18,23 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-websocket")
 //    compileOnly( 'org.springframework.boot:spring-boot-starter-websocket:sources')
-    implementation 'org.java-websocket:Java-WebSocket:1.5.6'
-    implementation 'org.java-websocket:Java-WebSocket:1.5.6:sources'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
-    implementation 'org.projectlombok:lombok:1.18.30'
-    annotationProcessor 'org.projectlombok:lombok:1.18.30'
-    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation ('org.java-websocket:Java-WebSocket:1.5.6')
+    implementation ('org.java-websocket:Java-WebSocket:1.5.6:sources')
+    implementation ('com.fasterxml.jackson.core:jackson-databind:2.16.1')
+    implementation ('org.slf4j:slf4j-api:2.0.9')
+    implementation("org.ta4j:ta4j-core:0.18")
+    implementation('org.ta4j:ta4j-core:0.18:sources')
+    implementation("org.glassfish.tyrus:tyrus-client:2.2.0")
+    implementation("org.glassfish.tyrus:tyrus-client:2.2.0:sources")
+    implementation("org.apache.httpcomponents:httpclient:4.3.4")
+    implementation("org.projectlombok:lombok")
+    implementation ('org.springframework.boot:spring-boot-starter-validation')
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    implementation("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok")
 //    implementation 'ch.qos.logback:logback-classic:1.4.11'
 }
 

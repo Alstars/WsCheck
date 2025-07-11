@@ -1,12 +1,14 @@
-package com.example.wscheck;
+package com.example.wscheck.controller;
 
+import com.example.wscheck.service.WebSocketService;
+import com.example.wscheck.ws.PrivateWebSocketClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/okx/ws")
+@RequestMapping("/api/okx")
 @RequiredArgsConstructor
 public class WebSocketController {
 

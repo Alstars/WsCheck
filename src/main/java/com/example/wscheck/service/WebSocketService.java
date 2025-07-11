@@ -1,5 +1,6 @@
-package com.example.wscheck;
+package com.example.wscheck.service;
 
+import com.example.wscheck.ws.PrivateWebSocketClient;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
